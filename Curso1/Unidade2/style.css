@@ -1,0 +1,20 @@
+body {
+    background-color: white;
+}
+
+h1 {
+    color: red;
+}
+
+#subtitulo{
+    color: blue;
+}
+
+.subtitulo_class{
+    color: green;
+}
+
+#main_container{
+    background-color: blanchedalmond;
+    border-radius: 20px;
+}
