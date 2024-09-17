@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nota = 0;
+
+        for (let index = 0; index < 4; index++) {
+            nota += parseFloat(prompt(`Digite a nota ${index+1} do aluno`))
+        }
+
+        alert(`A média das notas é ${nota/4}`)
+    </script>
+</body>
+</html>

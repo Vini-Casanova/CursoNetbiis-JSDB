@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalização Simples de Página</title>
+</head>
+<body>
+
+    <h1 id="welcome-message">Altere a cor da pagina!</h1>
+
+    <label>Cor do texto:</label>
+    <input type="color" id="textColor" value="#000000"><br><br>
+
+    <label>Cor do fundo:</label>
+    <input type="color" id="backgroundColor" value="#ffffff"><br><br>
+
+    <button onclick="aplicarCores()">Aplicar</button>
+
+    <script>
+        function aplicarCores() {
+            const textColor = document.getElementById('textColor').value;
+            const bgColor = document.getElementById('backgroundColor').value;
+
+            document.body.style.backgroundColor = bgColor;
+            document.getElementById('welcome-message').style.color = textColor;
+        }
+    </script>
+    
+</body>
+</html>

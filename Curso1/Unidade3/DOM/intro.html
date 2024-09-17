@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="Titulo">Nosso Titulo</h1>
+    <p class="paragrafo">Nosso Paragrafo</p>
+    <p class="paragrafo">Nosso Paragrafo</p>
+
+    <input type="text" name="nome" placeholder="Digite seu nome">
+
+    <script>
+        
+        let tituloo = document.getElementById('titulo');
+        let paragrafos = document.getElementsByClassName('paragrafo');
+        let paragrafoTag = document.getElementsByTagName('p');
+        let input = document.getElementsByName('nome');
+        let queryST = document.querySelector("#titulo")
+        let querySelector = document.querySelectorAll('.paragrafo');
+
+
+        console.log(tituloo.innerHTML);
+        console.log(paragrafos[0].innerHTML);
+
+        console.log(tituloo.style.color);
+
+        console.log(input[0].placeholder);
+        console.log(input[0].name);
+
+        tituloo.innerText = 'Novo Titulo';
+        paragrafos[0].innerText += ': Alterado ';
+        input[0].value = 'Valor Padrão';
+
+    </script>
+</body>
+</html>
