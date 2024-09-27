@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="total"></h1>
+    <script>
+        let input;
+        let total= 0;
+        let count = 0;
+        do{
+            input = parseFloat(prompt("Digite um numero maior que 0: \n Caso deseje saber a medias dos numeros inseridos digite 0"));
+            if(input!= 0){
+                total += input;
+                count++;
+            }
+        }while (input != 0 || !isNaN(input));
+        media = (total/count)
+        document.getElementById("total").innerHTML +="Media é: "+ media.toFixed(2)+ 
+                                                    "<br> Total de notas adicionadas: "+ count;
+        
+        
+        
+    </script>
+    
+</body>
+</html>
