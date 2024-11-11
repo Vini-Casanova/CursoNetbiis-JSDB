@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas dos Alunos</title>
+</head>
+<body>
+    <script>
+        const alunos = [
+            { nome: 'João', notas: { matematica: 8, portugues: 7, ciencias: 6 } },
+            { nome: 'Maria', notas: { matematica: 9, portugues: 8, ciencias: 7 } },
+            { nome: 'Pedro', notas: { matematica: 5, portugues: 6, ciencias: 5 } },
+            { nome: 'Ana', notas: { matematica: 7, portugues: 8, ciencias: 9 } }
+        ];
+
+        const alunosComMediaAcimaDeSete = [];
+
+        for (const aluno of alunos) {
+            let somaNotas = 0;
+            let quantidadeNotas = 0;
+
+            for (const nota in aluno.notas) {
+                somaNotas += aluno.notas[nota];
+                quantidadeNotas++;
+            }
+
+            const media = somaNotas / quantidadeNotas;
+
+            if (media > 7) {
+                alunosComMediaAcimaDeSete.push(aluno);
+            }
+        }
+
+        console.log('Alunos com média acima de 7:', alunosComMediaAcimaDeSete);
+    </script>
+</body>
+</html>

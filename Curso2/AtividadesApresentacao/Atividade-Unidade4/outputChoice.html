@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output Choice</title>
+    <script>
+        function somarExibir(a, b, callback) {
+            const sum = a + b;
+            callback(sum);
+        }
+
+        function showInConsole(sum) {
+            console.log("A soma é: " + sum);
+        }
+
+        function showInWindow(sum) {
+            alert("A soma é: " + sum);
+        }
+
+        function showInDocument(sum) {
+            document.getElementById("result").innerText = "A soma é: " + sum;
+        }
+
+        function handleSubmit() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const choice = document.querySelector('input[name="output"]:checked').value;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Por favor, insira números válidos.");
+                return;
+            }
+
+            switch (choice) {
+                case "console":
+                    somarExibir(num1, num2, showInConsole);
+                    break;
+                case "window":
+                    somarExibir(num1, num2, showInWindow);
+                    break;
+                case "document":
+                    somarExibir(num1, num2, showInDocument);
+                    break;
+                default:
+                    alert("Escolha uma opção de saída.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Escolha onde exibir a soma</h1>
+    <form onsubmit="event.preventDefault(); handleSubmit();">
+        <label for="num1">Número 1:</label>
+        <input type="number" id="num1" name="num1" required><br><br>
+        <label for="num2">Número 2:</label>
+        <input type="number" id="num2" name="num2" required><br><br>
+        <label>Escolha onde exibir a soma:</label><br>
+        <input type="radio" id="console" name="output" value="console" required>
+        <label for="console">Console</label><br>
+        <input type="radio" id="window" name="output" value="window">
+        <label for="window">Janela</label><br>
+        <input type="radio" id="document" name="output" value="document">
+        <label for="document">Documento</label><br><br>
+        <button type="submit">Calcular</button>
+    </form>
+    <p id="result"></p>
+</body>
+</html></form></html>
