@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "exercicio_express": "file:",
     "express": "^4.21.1",
     "nodemon": "^3.1.7"
   }
