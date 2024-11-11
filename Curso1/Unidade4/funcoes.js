@@ -16,5 +16,5 @@ function mensagemBoasVindas() {
 mensagemBoasVindas();
 let somaTeste = somar(10, 20);
 let imc = calcularIMC(70, 1.75);
-console.log(somaTeste); // 30
-console.log(imc); // 22.86
+console.log(somaTeste);
+console.log(imc);

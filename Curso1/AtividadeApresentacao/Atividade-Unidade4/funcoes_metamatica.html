@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matema</title>
+</head>
+
+<body>
+
+    <script>
+        function soma(i, j) {
+            if (typeof val1 !== 'number' || typeof val2 !== 'number') {
+                throw new Error('Valores devem ser numéricos.');
+            }
+            console.log(i + j)
+        }
+        
+        function sub(i, j) {
+            console.log(i - j)
+        }
+        function multiplicacao(i, j) {
+            console.log(i * j)
+
+        }
+        function divisao(i, j) {
+            if (typeof val1 !== 'number' || typeof val2 !== 'number') {
+                throw new Error('Valores devem ser numéricos.');
+            }
+            if (val2 === 0) {
+                throw new Error('Não é possível dividir por zero.');
+            }
+            return val1 / val2;
+            console.log(i / j)
+
+        }
+
+        console.log("Valor i = 20 e j = 5")
+
+
+
+        try {
+            soma(20, 5);
+            sub(20, 5);
+            multiplicacao(20, 5);
+            divisao(20, 5);
+        } catch (error) {
+            console.error(error.message);
+            console.log(error.stack);
+            console.log(error.name);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
