@@ -1,10 +1,3 @@
-// Agora é com você! Comece com o mesmo script do exercício prático 1
-// const candidatos = [
-//     {numeroCampanha: '50', nome: 'Guilherme Boulos', votos:0},
-//     {numeroCampanha: '15', nome: 'Ricardo Nunes', votos:0},
-//     {numeroCampanha: '28', nome: 'Pablo Marçal', votos:0}
-// ];
-
 let candidatos = [];
 let votosBrancos = 0;
 let votosNulos = 0;
