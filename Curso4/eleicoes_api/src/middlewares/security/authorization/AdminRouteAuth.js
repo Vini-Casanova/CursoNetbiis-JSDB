@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-const AdminMiddleware = (req, res, next) => {
+const AdminRouteAuth = (req, res, next) => {
 
     const token = req.headers['authorization'];
     if (!token) {
@@ -18,4 +18,4 @@ const AdminMiddleware = (req, res, next) => {
     }
 };
 
-export default AdminMiddleware;
+export default AdminRouteAuth;

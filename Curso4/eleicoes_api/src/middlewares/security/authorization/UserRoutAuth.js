@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 
-const AdminMiddleware = (req, res, next) => {
-
+const UserRoutAuth = (req, res, next) => {
+    
     const token = req.headers['authorization'];
     if (!token) {
         return res.status(401).json({ message: 'Token não informado' });
@@ -18,4 +18,4 @@ const AdminMiddleware = (req, res, next) => {
     }
 };
 
-export default AdminMiddleware;
+export default UserRoutAuth;
