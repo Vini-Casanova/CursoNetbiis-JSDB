@@ -1,21 +1,19 @@
-import express from 'express';
+import express from "express";
+import helmet from 'helmet'
 import AppRouter from './router/AppRouter.js';
-import LogMiddleware from './middlewares/LogMiddleware.js';
-import ErrorHandler from './middlewares/ErrorHandler.js';
+import LogMiddleware from "./middlewares/LogMiddleware.js";
+import ErrorHandler from "./middlewares/ErrorHandler.js";
 import cors from 'cors';
-import helmet from 'helmet';
 
 const app = express();
 
 app.use(express.json());
-app.use(cors());
 app.use(helmet());
+app.use(cors());
 app.use(LogMiddleware);
 
 app.use('/', AppRouter);
-
 app.use(ErrorHandler);
-
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
-});
+app.listen(process.env.PORT, () =>{
+	console.log("Servidor Rodando na porta 3000 "+process.env.PORT);
+})

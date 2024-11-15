@@ -1,33 +1,39 @@
-import * as candidatosRepository from '../repositories/CandidatosRepository.js';
+import * as CandidatosRepository from "../repositories/CandidatosRepository.js"
+import AppError from '../errors/AppError.js';
+export async function listarCandidatos() {
+    return await CandidatosRepository.listarCandidatos();
+}
 
-export async function listarCandidatos(eleicaoId = false) {
-    if(eleicaoId) {
-        const res = await candidatosRepository.listarCandidatosPorEleicao(eleicaoId);
-        return res;
-    }
-    const res = await candidatosRepository.listarCandidatos();
-    return res;
+export async function buscarCandidatoPorId(id) {
+    return await CandidatosRepository.buscarCandidato(id);
 }
 
 export async function obterCandidato(id, eleicaoId) {
-    const res = await candidatosRepository.obterCandidato(id, eleicaoId);
+    const res = await CandidatosRepository.obterCandidato(id, eleicaoId);
     return res;
 }
 
-export async function obterCandidatoPorNumero(numero, eleicaoId) {
-    return await candidatosRepository.obterCandidatoPorNumero(numero, eleicaoId);
+export async function buscarCandidatosPorEleicaoId(id) {
+    console.log(id);
+    return await CandidatosRepository.listarCandidatosPorEleicao(id);
 }
 
-export async function criarCandidato(candidato) {
-    const result = await candidatosRepository.adicionarCandidato(candidato);
-    return result;
+export function criarCandidato(candidato) {
+    return CandidatosRepository.criarCandidato(candidato);
 }
 
-export function atualizarCandidato(id, candidato) {
-    const result = candidatosRepository.atualizarCandidato(id, candidato);
-    return result;
+export async function atualizarCandidato(candidato) {
+    const candidatoBase = await CandidatosRepository.buscarCandidato(candidato.id);
+        if (!candidatoBase) {
+            throw new AppError('Candidato não encontrado', 404);
+        }
+    return CandidatosRepository.atualizarCandidato(candidato)
 }
 
 export async function deletarCandidato(id) {
-    await candidatosRepository.deletarCandidato(id);
+        const candidato = await CandidatosRepository.buscarCandidato(id);
+        if (isNull) {
+            throw new AppError('Candidato não encontrado', 404);
+        }
+        return CandidatosRepository.deletarCandidato(id);
 }
